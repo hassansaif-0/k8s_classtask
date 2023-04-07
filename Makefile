@@ -3,6 +3,7 @@ install:
 		pip install -r requirements.txt
 
 lint:
+	docker pull hadolint/hadolint
 	docker run --rm -i hadolint/hadolint < Dockerfile
 	pylint --fail-under=-1 app.py
 
